@@ -53,5 +53,5 @@ def index():
     return render_template("formulario.html", resultado=None)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # para Render
-    app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
