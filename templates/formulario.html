@@ -1,84 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Encuesta Deserción</title>
+    <meta charset="UTF-8">
+    <title>Encuesta de Deserción</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <h2>Encuesta para Predecir Deserción</h2>
-    <form method="post">
-        <label>Semestre: <input type="number" name="semestre" required></label><br>
-        <label>Edad: <input type="number" name="edad" required></label><br>
-        <label>Promedio: <input type="number" step="0.1" name="promedio" required></label><br>
-        <label>Faltas: <input type="number" name="faltas" required></label><br>
-        <label>Horas de estudio: <input type="number" name="horas_estudio" required></label><br>
-        <label>Motivación (0-10): <input type="number" name="motivacion" required></label><br>
-        <label>Tristeza (0-10): <input type="number" name="tristeza" required></label><br>
-        <label>Pérdida de interés (0-10): <input type="number" name="perdida_interes" required></label><br>
-        <label>Concentración (0-10): <input type="number" name="concentracion" required></label><br>
-        <label>Sueño (0-10): <input type="number" name="sueno" required></label><br>
-        <label>Autoestima (0-10): <input type="number" name="autoestima" required></label><br>
+<body class="bg-light">
+    <div class="container mt-5 mb-5">
+        <div class="card shadow-lg">
+            <div class="card-header text-center bg-success text-white">
+                <h2>Encuesta para Predecir la Deserción Escolar</h2>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="row g-3">
 
-        <label>Género:
-            <select name="genero">
-                <option>Masculino</option>
-                <option>Femenino</option>
-            </select>
-        </label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">¿En qué semestre estás?</label>
+                            <input type="number" name="semestre" class="form-control" required>
+                        </div>
 
-        <label>Responsabilidades en casa:
-            <select name="responsabilidades">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">¿Cuál es tu edad?</label>
+                            <input type="number" name="edad" class="form-control" required>
+                        </div>
 
-        <label>¿Has reprobado materias?
-            <select name="reprobado">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">Promedio académico</label>
+                            <input type="number" step="0.1" name="promedio" class="form-control" required>
+                        </div>
 
-        <label>¿Trabajas?
-            <select name="trabajo">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">Faltas acumuladas</label>
+                            <input type="number" name="faltas" class="form-control" required>
+                        </div>
 
-        <label>¿Tienes internet en casa?
-            <select name="internet">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">Horas de estudio semanales</label>
+                            <input type="number" name="horas_estudio" class="form-control" required>
+                        </div>
 
-        <label>¿Recibes apoyo emocional o familiar?
-            <select name="apoyo">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">Motivación (0 a 10)</label>
+                            <input type="number" name="motivacion" class="form-control" required>
+                        </div>
 
-        <label>¿Tienes un buen ambiente de estudio?
-            <select name="ambiente">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">Tristeza (0 a 10)</label>
+                            <input type="number" name="tristeza" class="form-control" required>
+                        </div>
 
-        <label>¿Has pensado en abandonar la escuela?
-            <select name="abandono">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+                        <div class="col-md-6">
+                            <label class="form-label">Pérdida de interés (0 a 10)</label>
+                            <input type="number" name="perdida_interes" class="form-control" required>
+                        </div>
 
-        <button type="submit">Predecir</button>
-    </form>
+                        <div class="col-md-6">
+                            <label class="form-label">Problemas de concentración (0 a 10)</label>
+                            <input type="number" name="concentracion" class="form-control" required>
+                        </div>
 
-    {% if resultado %}
-        <h3>Resultado: {{ resultado }}</h3>
-    {% endif %}
+                        <div class="col-md-6">
+                            <label class="form-label">Problemas de sueño (0 a 10)</label>
+                            <input type="number" name="sueno" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Autoestima (0 a 10)</label>
+                            <input type="number" name="autoestima" class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Género</label>
+                            <select name="genero" class="form-select">
+                                <option>Masculino</option>
+                                <option>Femenino</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">¿Tienes responsabilidades en casa?</label>
+                            <select name="responsabilidades" class="form-select">
+                                <option>Sí</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">¿Has reprobado materias?</label>
+                            <select name="reprobado" class="form-select">
+                                <option>Sí</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">¿Trabajas actualmente?</label>
+                            <select name="trabajo" class="form-select">
+                                <option>Sí</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">¿Tienes internet en casa?</label>
+                            <select name="internet" class="form-select">
+                                <option>Sí</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">¿Recibes apoyo emocional o familiar?</label>
+                            <select name="apoyo" class="form-select">
+                                <option>Sí</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">¿Tienes un ambiente adecuado para estudiar?</label>
+                            <select name="ambiente" class="form-select">
+                                <option>Sí</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">¿Has pensado en abandonar la escuela?</label>
+                            <select name="abandono" class="form-select">
+                                <option>Sí</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success mt-4 w-100">Predecir</button>
+                </form>
+
+                {% if resultado %}
+                    <div class="alert alert-info mt-4 text-center">
+                        <strong>Resultado:</strong> {{ resultado }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS opcional -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
