@@ -1,84 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Encuesta Deserción</title>
+    <meta charset="UTF-8">
+    <title>Encuesta de Deserción</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f6f9;
+            padding: 40px;
+        }
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 500;
+            color: #444;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px 12px;
+            margin-top: 5px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .resultado {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
 </head>
 <body>
-    <h2>Encuesta para Predecir Deserción</h2>
-    <form method="post">
-        <label>Semestre: <input type="number" name="semestre" required></label><br>
-        <label>Edad: <input type="number" name="edad" required></label><br>
-        <label>Promedio: <input type="number" step="0.1" name="promedio" required></label><br>
-        <label>Faltas: <input type="number" name="faltas" required></label><br>
-        <label>Horas de estudio: <input type="number" name="horas_estudio" required></label><br>
-        <label>Motivación (0-10): <input type="number" name="motivacion" required></label><br>
-        <label>Tristeza (0-10): <input type="number" name="tristeza" required></label><br>
-        <label>Pérdida de interés (0-10): <input type="number" name="perdida_interes" required></label><br>
-        <label>Concentración (0-10): <input type="number" name="concentracion" required></label><br>
-        <label>Sueño (0-10): <input type="number" name="sueno" required></label><br>
-        <label>Autoestima (0-10): <input type="number" name="autoestima" required></label><br>
+    <div class="container">
+        <h2>Encuesta para Predecir la Deserción Escolar</h2>
+        <form method="post">
+            <label>¿En qué semestre estás? <input type="number" name="semestre" required></label>
+            <label>¿Cuál es tu edad? <input type="number" name="edad" required></label>
+            <label>¿Cuál es tu promedio académico? <input type="number" step="0.1" name="promedio" required></label>
+            <label>¿Cuántas faltas has tenido? <input type="number" name="faltas" required></label>
+            <label>¿Cuántas horas estudias a la semana? <input type="number" name="horas_estudio" required></label>
+            <label>¿Qué tan motivado(a) te sientes? (0 nada – 10 mucho) <input type="number" name="motivacion" required></label>
+            <label>¿Qué tan triste te sientes últimamente? (0 nada – 10 mucho) <input type="number" name="tristeza" required></label>
+            <label>¿Has perdido el interés en tus actividades? (0 nada – 10 mucho) <input type="number" name="perdida_interes" required></label>
+            <label>¿Tienes dificultad para concentrarte? (0 nada – 10 mucho) <input type="number" name="concentracion" required></label>
+            <label>¿Has tenido problemas de sueño? (0 nada – 10 mucho) <input type="number" name="sueno" required></label>
+            <label>¿Cómo calificas tu autoestima? (0 muy baja – 10 muy alta) <input type="number" name="autoestima" required></label>
 
-        <label>Género:
-            <select name="genero">
-                <option>Masculino</option>
-                <option>Femenino</option>
-            </select>
-        </label><br>
+            <label>Género:
+                <select name="genero">
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                </select>
+            </label>
 
-        <label>Responsabilidades en casa:
-            <select name="responsabilidades">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+            <label>¿Tienes responsabilidades en casa?
+                <select name="responsabilidades">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+            </label>
 
-        <label>¿Has reprobado materias?
-            <select name="reprobado">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+            <label>¿Has reprobado materias?
+                <select name="reprobado">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+            </label>
 
-        <label>¿Trabajas?
-            <select name="trabajo">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+            <label>¿Tienes un trabajo actualmente?
+                <select name="trabajo">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+            </label>
 
-        <label>¿Tienes internet en casa?
-            <select name="internet">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+            <label>¿Tienes acceso a internet en casa?
+                <select name="internet">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+            </label>
 
-        <label>¿Recibes apoyo emocional o familiar?
-            <select name="apoyo">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+            <label>¿Recibes apoyo emocional o familiar?
+                <select name="apoyo">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+            </label>
 
-        <label>¿Tienes un buen ambiente de estudio?
-            <select name="ambiente">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+            <label>¿Tienes un ambiente adecuado para estudiar?
+                <select name="ambiente">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+            </label>
 
-        <label>¿Has pensado en abandonar la escuela?
-            <select name="abandono">
-                <option>Sí</option>
-                <option>No</option>
-            </select>
-        </label><br>
+            <label>¿Has pensado en abandonar la escuela?
+                <select name="abandono">
+                    <option>Sí</option>
+                    <option>No</option>
+                </select>
+            </label>
 
-        <button type="submit">Predecir</button>
-    </form>
+            <button type="submit">Predecir</button>
+        </form>
 
-    {% if resultado %}
-        <h3>Resultado: {{ resultado }}</h3>
-    {% endif %}
+        {% if resultado %}
+            <div class="resultado">Resultado: {{ resultado }}</div>
+        {% endif %}
+    </div>
 </body>
 </html>
